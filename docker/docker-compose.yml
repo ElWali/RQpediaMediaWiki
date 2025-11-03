@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  mediawiki:
+    image: public.ecr.aws/docker/library/mediawiki:1.39
+    ports:
+      - '8080:80'
+    volumes:
+      - mediawiki_data:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: public.ecr.aws/bitnami/mariadb:10.5
+    environment:
+      MARIADB_ROOT_PASSWORD: change-me
+      MARIADB_DATABASE: mediawiki
+      MARIADB_USER: mediawiki
+      MARIADB_PASSWORD: mwpass
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pchange-me"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.13
+    environment:
+      - discovery.type=single-node
+
+volumes:
+  mediawiki_data: {}
