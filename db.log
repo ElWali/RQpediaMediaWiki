@@ -1,0 +1,63 @@
+db-1  | 2025-11-04 16:04:04+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.6.23+maria~ubu2204 started.
+db-1  | 2025-11-04 16:04:04+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db-1  | 2025-11-04 16:04:04+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.6.23+maria~ubu2204 started.
+db-1  | 2025-11-04 16:04:05+00:00 [Note] [Entrypoint]: Initializing database files
+db-1  | 2025-11-04 16:04:06+00:00 [Note] [Entrypoint]: Database files initialized
+db-1  | 2025-11-04 16:04:06+00:00 [Note] [Entrypoint]: Starting temporary server
+db-1  | 2025-11-04 16:04:06+00:00 [Note] [Entrypoint]: Waiting for server startup
+db-1  | 2025-11-04 16:04:06 0 [Note] Starting MariaDB 10.6.23-MariaDB-ubu2204 source revision fe8047caf26d20e98ea7f6ec1dce3924e696703f server_uid dTbEIR/K7h4xI57XiySp3TS0tJg= as process 101
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: Number of pools: 1
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+db-1  | 2025-11-04 16:04:06 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: Using liburing
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: Completed initialization of buffer pool
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: 128 rollback segments are active.
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+db-1  | 2025-11-04 16:04:06 0 [Note] InnoDB: 10.6.23 started; log sequence number 41354; transaction id 14
+db-1  | 2025-11-04 16:04:06 0 [Note] Plugin 'FEEDBACK' is disabled.
+db-1  | 2025-11-04 16:04:06 0 [Note] mariadbd: ready for connections.
+db-1  | Version: '10.6.23-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 0  mariadb.org binary distribution
+db-1  | 2025-11-04 16:04:07+00:00 [Note] [Entrypoint]: Temporary server started.
+db-1  | 2025-11-04 16:04:11+00:00 [Note] [Entrypoint]: Creating database wikidb
+db-1  | 2025-11-04 16:04:11+00:00 [Note] [Entrypoint]: Creating user wikiuser
+db-1  | 2025-11-04 16:04:11+00:00 [Note] [Entrypoint]: Giving user wikiuser access to schema wikidb
+db-1  | 2025-11-04 16:04:11+00:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
+db-1  |
+db-1  | 2025-11-04 16:04:11+00:00 [Note] [Entrypoint]: Stopping temporary server
+db-1  | 2025-11-04 16:04:11 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
+db-1  | 2025-11-04 16:04:11 0 [Note] InnoDB: FTS optimize thread exiting.
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Starting shutdown...
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Buffer pool(s) dump completed at 251104 16:04:12
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Shutdown completed; log sequence number 42664; transaction id 15
+db-1  | 2025-11-04 16:04:12 0 [Note] mariadbd: Shutdown complete
+db-1  | 2025-11-04 16:04:12+00:00 [Note] [Entrypoint]: Temporary server stopped
+db-1  |
+db-1  | 2025-11-04 16:04:12+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+db-1  |
+db-1  | 2025-11-04 16:04:12 0 [Note] Starting MariaDB 10.6.23-MariaDB-ubu2204 source revision fe8047caf26d20e98ea7f6ec1dce3924e696703f server_uid dTbEIR/K7h4xI57XiySp3TS0tJg= as process 1
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Number of pools: 1
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+db-1  | 2025-11-04 16:04:12 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Using liburing
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Completed initialization of buffer pool
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: 128 rollback segments are active.
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: 10.6.23 started; log sequence number 42664; transaction id 15
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db-1  | 2025-11-04 16:04:12 0 [Note] Plugin 'FEEDBACK' is disabled.
+db-1  | 2025-11-04 16:04:12 0 [Note] InnoDB: Buffer pool(s) load completed at 251104 16:04:12
+db-1  | 2025-11-04 16:04:12 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+db-1  | 2025-11-04 16:04:12 0 [Note] Server socket created on IP: '0.0.0.0'.
+db-1  | 2025-11-04 16:04:12 0 [Warning] Failed to create a socket for IPv6 '::': errno: 97.
+db-1  | 2025-11-04 16:04:12 0 [Note] mariadbd: ready for connections.
+db-1  | Version: '10.6.23-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution

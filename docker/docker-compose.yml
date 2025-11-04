@@ -1,24 +1,36 @@
 version: '3.8'
 services:
   mediawiki:
-    image: public.ecr.aws/docker/library/mediawiki:1.39
+    image: mediawiki:1.39
+    env_file: .env
+    environment:
+      MEDIAWIKI_DB_HOST: ${MEDIAWIKI_DB_HOST}
+      MEDIAWIKI_DB_NAME: ${MEDIAWIKI_DB_NAME}
+      MEDIAWIKI_DB_USER: ${MEDIAWIKI_DB_USER}
+      MEDIAWIKI_DB_PASSWORD: ${MEDIAWIKI_DB_PASSWORD}
+      MEDIAWIKI_SECRET_KEY: ${MEDIAWIKI_SECRET_KEY}
+      MEDIAWIKI_UPGRADE_KEY: ${MEDIAWIKI_UPGRADE_KEY}
     ports:
       - '8080:80'
     volumes:
+      - ../mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
       - mediawiki_data:/var/www/html
     depends_on:
       db:
         condition: service_healthy
 
   db:
-    image: public.ecr.aws/bitnami/mariadb:10.5
+    image: mariadb:10.6
+    env_file: .env
+    volumes:
+      - db_data:/var/lib/mysql
     environment:
-      MARIADB_ROOT_PASSWORD: change-me
-      MARIADB_DATABASE: mediawiki
-      MARIADB_USER: mediawiki
-      MARIADB_PASSWORD: mwpass
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MEDIAWIKI_DB_NAME}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pchange-me"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -30,3 +42,4 @@ services:
 
 volumes:
   mediawiki_data: {}
+  db_data: {}
